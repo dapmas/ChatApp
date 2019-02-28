@@ -13,9 +13,6 @@
   "author": "sampad",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.16.4",
-  },
-  "devDependencies":{
-    "nodemon": "^1.18.10"
+    "express": "^4.16.4"
   }
 }
