@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>Chat App</title>
+    <script src = "https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js" type="text/javascript"></script>
     <link rel="stylesheet" href="/styles.css">
   </head>
   <body>
-    <h1>Server is Running.</h1>
+    <div id="chat-main">
+      <div id="chat-window">
+        <div id= "message-window"></div>
+      </div>
+      <input type="text" id="handle" placeholder="Choose your handle...">
+      <input type="text" id="message" placeholder="Enter your message...">
+      <button type="button" id="send-message">Send</button>
+    </div>
+    <script src = "/chat.js" type="text/javascript"></script>
   </body>
 </html>
