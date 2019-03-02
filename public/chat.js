@@ -9,8 +9,6 @@ var message = document.getElementById('message');
     messageWindow = document.getElementById('message-window'),
     feedback = document.getElementById('feedback');
 
-
-
 // client Events
 btn.addEventListener('click', function() {
   socket.emit('chat', {
