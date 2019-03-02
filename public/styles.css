@@ -18,9 +18,12 @@ h2{
 
 #chat-window, #video-window{
     height: 40vh;
-    width: 100vh;
-    overflow: auto;
+    overflow: hidden;
     background: #f9f9f9;
+}
+
+#localVideo, #remoteVideo {
+  width: 450px;
 }
 
 #screen-share-window{
