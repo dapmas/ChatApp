@@ -18,4 +18,9 @@ var io = socket(server);
 
 io.on('connection', function(socket) {
   console.log("Made socket connection with " + socket.id);
+
+  socket.on('chat', function(data) {
+    // io.sockets means all the sockets connected to the server
+    io.sockets.emit('chat', data);
+  })
 });
