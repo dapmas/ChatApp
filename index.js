@@ -1,5 +1,5 @@
 var express = require('express');
-
+var socket = require('socket.io');
 // Setup add
 var app = express();
 
@@ -11,3 +11,11 @@ var server = app.listen(4000, function() {
 
 // middleware to serve public/static files
 app.use(express.static('client'));
+
+
+// Socket setup => takes parameter as the server to bind
+var io = socket(server);
+
+io.on('connection', function(socket) {
+  console.log("Made socket connection with " + socket.id);
+});
