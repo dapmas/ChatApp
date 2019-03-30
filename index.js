@@ -23,4 +23,8 @@ io.on('connection', function(socket) {
     // io.sockets means all the sockets connected to the server
     io.sockets.emit('chat', data);
   })
+
+  socket.on('typing', function(data) {
+    socket.broadcast.emit('typing', data);
+  });
 });

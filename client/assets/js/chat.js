@@ -10,8 +10,14 @@ var message = $("#message");
 
 // Socket listen for events sent by the server
 clientSocket.on('chat', function(data) {
+  notifyUsers.html('');
   outputWindow.append('<p><strong>' + data.handle + ':' + '</strong> ' + data.message + '</p>');
 });
+
+clientSocket.on('typing', function(data) {
+  notifyUsers.html('<p><em>' + data + ' is typing...</em></p>');
+});
+
 
 // Socket emit events on send btn click
 sendBtn.on('click', function() {
@@ -19,4 +25,9 @@ sendBtn.on('click', function() {
     message: message.val(),
     handle: handle.val()
   });
+  message.val('');
+});
+
+message.on('keypress', function() {
+  clientSocket.emit('typing', handle.val());
 });
